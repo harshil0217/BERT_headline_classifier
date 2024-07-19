@@ -15,7 +15,7 @@ from tqdm import tqdm
 class HeadlineData(Dataset):
     def __init__(self,tokenizer, max_len):
         super(HeadlineData, self).__init__()
-        self.train_csv = pd.read_csv("./data/headlines_annotated.tsv", sep="\t")
+        self.train_csv = pd.read_csv("./data/headlines_resampled.tsv", sep="\t")
         self.tokenizer = tokenizer
         self.target = self.train_csv["dominant_emotion"].values
         self.max_len = max_len
